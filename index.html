@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Search Appearance -->
     <title>Dr. Amine Khadiri | Cardiologue à Casablanca | Prise de RDV</title>
-    <meta name="description" content="Dr. Amine Khadiri, cardiologue à Casablanca. Écho-Doppler cardiaque, Holter de 24h, épreuve d'effort. Suivi humain et personnalisé. Prenez rendez-vous en ligne pour votre bilan cardiaque.">
+    <meta name="description" content="Dr. Amine Khadiri, cardiologue à Casablanca. Diagnostic précis : Écho-Doppler cardiaque, Holter de 24h, épreuve d'effort. Suivi humain et personnalisé. Prenez rendez-vous en ligne pour votre bilan cardiaque.">
     <meta name="keywords" content="Cardiologue Casablanca, Dr. Amine Khadiri, Meilleur cardiologue Casablanca, Rendez-vous cardiologue, Cabinet cardiologie, Hypertension, Épreuve d'effort, Holter ECG, Bilan cardiologique, Cardiologue 2mars, Cardiologue quartier des hopitaux, Cardiologue Quartier des Hôpitaux, طبيب القلب الدار البيضاء, أحسن طبيب قلب في الدار البيضاء">
-<meta name="author" content="Dr. Amine Khadiri">
+    <meta name="author" content="Dr. Amine Khadiri">
     <meta name="google-site-verification" content="IOwmUBniEGBHFAlT-9CRurghGEOLJ9kFTsRntY_GibE" />
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+    <!-- Styles & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&family=Cairo:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/jpeg" href="logo.jpeg">
-   
+    
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -69,38 +73,36 @@
         html[dir="rtl"] .sm\:ml-3 { margin-left: 0; margin-right: 0.75rem; }
         html[dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
         html[dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
-        #gemini-result ul { list-style-position: inside; }
-        #gemini-result li { margin-bottom: 0.5rem; }
     </style>
+
+    <!-- Structured Data for Google -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
     {
-      "@type": "Physician",
-      "name": "Dr. Amine Khadiri",
-      "image": "https://www.moncardiologue-casablanca.ma/visite.jpeg",
-      "url": "https://www.moncardiologue-casablanca.ma",
-      "telephone": "+212522863586",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "119, Bd Moulay Driss 1er, 5ème étage, N°9, Quartier des Hôpitaux",
-        "addressLocality": "Casablanca",
-        "postalCode": "20500",
-        "addressCountry": "MA"
-      },
-      "medicalSpecialty": "Cardiology"
-    },
-    {
-      "@type": "WebSite",
-      "name": "Dr. Amine Khadiri",
-      "url": "https://www.moncardiologue-casablanca.ma/"
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Physician",
+          "name": "Dr. Amine Khadiri",
+          "image": "https://www.moncardiologue-casablanca.ma/visite.jpeg",
+          "url": "https://www.moncardiologue-casablanca.ma",
+          "telephone": "+212522863586",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "119, Bd Moulay Driss 1er, 5ème étage, N°9, Quartier des Hôpitaux",
+            "addressLocality": "Casablanca",
+            "postalCode": "20500",
+            "addressCountry": "MA"
+          },
+          "medicalSpecialty": "Cardiology"
+        },
+        {
+          "@type": "WebSite",
+          "name": "Dr. Amine Khadiri",
+          "url": "https://www.moncardiologue-casablanca.ma/"
+        }
+      ]
     }
-  ]
-}
-</script>
-
-
+    </script>
 </head>
 <body class="bg-white text-gray-700">
 
@@ -305,36 +307,36 @@
             </div>
         </section>
         
-       <!-- Assistant IA Section -->
-<section id="assistant" class="py-20 md:py-32 reveal">
-     <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900">
-                <span data-lang="fr">Assistant d'Information Cardiologique</span>
-                <span data-lang="ar" class="font-cairo">مساعد المعلومات لأمراض القلب</span>
-            </h2>
-            <p class="mt-4 max-w-2xl mx-auto text-gray-600">
-                <span data-lang="fr">Posez une question d'ordre général et notre assistant IA vous fournira une réponse simple et brève.</span>
-                <span data-lang="ar" class="font-cairo">اطرح سؤالاً عامًا وسيقدم لك مساعدنا الذكي إجابة بسيطة وموجزة.</span>
-            </p>
-        </div>
-        <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
-            <textarea id="gemini-prompt" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500" rows="3" placeholder="Ex: Qu'est-ce qu'une palpitation ?"></textarea>
-            <div class="text-center mt-4">
-                <button id="gemini-generate-btn" class="brand-red-bg text-white font-bold px-8 py-3 rounded-full hover:bg-red-800 transition shadow-lg">
-                    ✨ <span data-lang="fr">Obtenir une réponse</span><span data-lang="ar" class="font-cairo">الحصول على إجابة</span>
-                </button>
+        <!-- Assistant IA Section -->
+        <section id="assistant" class="py-20 md:py-32 reveal">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        <span data-lang="fr">Assistant d'Information Cardiologique</span>
+                        <span data-lang="ar" class="font-cairo">مساعد المعلومات لأمراض القلب</span>
+                    </h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">
+                        <span data-lang="fr">Posez une question d'ordre général et notre assistant IA vous fournira une réponse simple et brève.</span>
+                        <span data-lang="ar" class="font-cairo">اطرح سؤالاً عامًا وسيقدم لك مساعدنا الذكي إجابة بسيطة وموجزة.</span>
+                    </p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <textarea id="gemini-prompt" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500" rows="3" placeholder="Ex: Qu'est-ce qu'une palpitation ?"></textarea>
+                    <div class="text-center mt-4">
+                        <button id="gemini-generate-btn" class="brand-red-bg text-white font-bold px-8 py-3 rounded-full hover:bg-red-800 transition shadow-lg">
+                            ✨ <span data-lang="fr">Obtenir une réponse</span><span data-lang="ar" class="font-cairo">الحصول على إجابة</span>
+                        </button>
+                    </div>
+                    <div id="gemini-loading" class="text-center mt-6 hidden">
+                        <i class="fas fa-spinner fa-spin text-3xl brand-red"></i>
+                    </div>
+                    <div id="gemini-result" class="mt-6 p-6 bg-red-50 rounded-lg" style="display: none;">
+                        <!-- Gemini result here -->
+                    </div>
+                </div>
             </div>
-            <div id="gemini-loading" class="text-center mt-6 hidden">
-                <i class="fas fa-spinner fa-spin text-3xl brand-red"></i>
-            </div>
-            <div id="gemini-result" class="mt-6 p-6 bg-red-50 rounded-lg" style="display: none;">
-                <!-- Gemini result here -->
-            </div>
-        </div>
-    </div>
-</section>
-
+        </section>
+        
         <!-- Cabinet Gallery -->
         <section id="cabinet" class="py-20 md:py-32 reveal">
             <div class="container mx-auto px-6">
@@ -416,14 +418,14 @@
                                 </p>
                             </div></div>
                         </div>
-                       <div class="mt-8">
-    <div class="rounded-lg overflow-hidden h-64">
-        <iframe src="https://maps.google.com/maps?q=Dr%20Amine%20Khadiri%20Cardiologue%20Casablanca&t=&z=18&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Dr+Amine+Khadiri+Cardiologue+Casablanca" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block w-full text-center brand-red-bg text-white font-bold px-6 py-3 rounded-full hover:bg-red-800 transition shadow-lg">
-        <i class="fas fa-route mr-2"></i> <span data-lang="fr">Itinéraire</span><span data-lang="ar" class="font-cairo">المسار</span>
-    </a>
-</div>
+                        <div class="mt-8">
+                            <div class="rounded-lg overflow-hidden h-64">
+                                <iframe src="https://maps.google.com/maps?q=Dr%20Amine%20Khadiri%20Cardiologue%20Casablanca&t=&z=18&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Dr+Amine+Khadiri+Cardiologue+Casablanca" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block w-full text-center brand-red-bg text-white font-bold px-6 py-3 rounded-full hover:bg-red-800 transition shadow-lg">
+                                <i class="fas fa-route mr-2"></i> <span data-lang="fr">Itinéraire</span><span data-lang="ar" class="font-cairo">المسار</span>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Système de RDV -->
@@ -684,7 +686,6 @@
                 }
             };
             
-            const langSwitcherDesktop = document.getElementById('lang-switcher-desktop');
             const setLanguage = (lang) => {
                 document.documentElement.lang = lang;
                 document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -703,71 +704,71 @@
             const savedLang = localStorage.getItem('language');
             setLanguage(savedLang || 'fr');
 
-          // --- SCRIPT GEMINI ---
-const generateBtn = document.getElementById('gemini-generate-btn');
-const promptInput = document.getElementById('gemini-prompt');
-const loadingEl = document.getElementById('gemini-loading');
-const resultEl = document.getElementById('gemini-result');
+            // --- SCRIPT GEMINI ---
+            const generateBtn = document.getElementById('gemini-generate-btn');
+            const promptInput = document.getElementById('gemini-prompt');
+            const loadingEl = document.getElementById('gemini-loading');
+            const resultEl = document.getElementById('gemini-result');
 
-if(generateBtn){
-    generateBtn.addEventListener('click', async () => {
-        const userPrompt = promptInput.value.trim();
-        const currentLang = document.documentElement.lang || 'fr';
-        const alertMessages = {
-            fr: "Veuillez poser une question.",
-            ar: "الرجاء طرح سؤال."
-        };
+            if(generateBtn){
+                generateBtn.addEventListener('click', async () => {
+                    const userPrompt = promptInput.value.trim();
+                    const currentLang = document.documentElement.lang || 'fr';
+                    const alertMessages = {
+                        fr: "Veuillez poser une question.",
+                        ar: "الرجاء طرح سؤال."
+                    };
 
-        if (!userPrompt) {
-            alert(alertMessages[currentLang]);
-            return;
-        }
+                    if (!userPrompt) {
+                        alert(alertMessages[currentLang]);
+                        return;
+                    }
 
-        loadingEl.style.display = 'block';
-        resultEl.style.display = 'none';
-        resultEl.innerHTML = '';
+                    loadingEl.style.display = 'block';
+                    resultEl.style.display = 'none';
+                    resultEl.innerHTML = '';
 
-        const fullPrompt = `En tant qu'assistant médical dans un cabinet de cardiologie, répondez à la question générale suivante de manière TRÈS BRÈVE et SIMPLE (2-3 phrases maximum) : '${userPrompt}'. Ne donnez AUCUN conseil médical, diagnostic ou pronostic. Terminez IMPÉRATIVEMENT votre réponse par la phrase suivante, traduite dans la langue de la question (français ou arabe) : 'Pour un avis médical précis, il est essentiel de prendre rendez-vous pour une consultation.'`;
-        
-        try {
-            let chatHistory = [];
-            chatHistory.push({ role: "user", parts: [{ text: fullPrompt }] });
-            const payload = { contents: chatHistory };
-            const apiKey = ""; 
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-            
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+                    const fullPrompt = `En tant qu'assistant médical dans un cabinet de cardiologie, répondez à la question générale suivante de manière TRÈS BRÈVE et SIMPLE (2-3 phrases maximum) : '${userPrompt}'. Ne donnez AUCUN conseil médical, diagnostic ou pronostic. Terminez IMPÉRATIVEMENT votre réponse par la phrase suivante, traduite dans la langue de la question (français ou arabe) : 'Pour un avis médical précis, il est essentiel de prendre rendez-vous pour une consultation.'`;
+                    
+                    try {
+                        let chatHistory = [];
+                        chatHistory.push({ role: "user", parts: [{ text: fullPrompt }] });
+                        const payload = { contents: chatHistory };
+                        const apiKey = ""; 
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                        
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
 
-            if (!response.ok) {
-                throw new Error(`Erreur API: ${response.statusText}`);
+                        if (!response.ok) {
+                            throw new Error(`Erreur API: ${response.statusText}`);
+                        }
+                        
+                        const result = await response.json();
+
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            
+                            let text = result.candidates[0].content.parts[0].text;
+                            resultEl.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+                        } else {
+                           resultEl.innerHTML = '<p>Désolé, une erreur est survenue. Veuillez réessayer.</p>';
+                        }
+
+                    } catch (error) {
+                        console.error('Erreur Gemini:', error);
+                        resultEl.innerHTML = '<p>Désolé, impossible de contacter l\'assistant pour le moment.</p>';
+                    } finally {
+                        loadingEl.style.display = 'none';
+                        resultEl.style.display = 'block';
+                    }
+                });
             }
-            
-            const result = await response.json();
-
-            if (result.candidates && result.candidates.length > 0 &&
-                result.candidates[0].content && result.candidates[0].content.parts &&
-                result.candidates[0].content.parts.length > 0) {
-                
-                let text = result.candidates[0].content.parts[0].text;
-                resultEl.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
-            } else {
-               resultEl.innerHTML = '<p>Désolé, une erreur est survenue. Veuillez réessayer.</p>';
-            }
-
-        } catch (error) {
-            console.error('Erreur Gemini:', error);
-            resultEl.innerHTML = '<p>Désolé, impossible de contacter l\'assistant pour le moment.</p>';
-        } finally {
-            loadingEl.style.display = 'none';
-            resultEl.style.display = 'block';
-        }
-    });
-}
-
+        });
     </script>
 </body>
 </html>
