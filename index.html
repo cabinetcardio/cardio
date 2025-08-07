@@ -7,7 +7,7 @@
     <!-- SEO & Search Appearance -->
     <title>Dr. Amine Khadiri | Cardiologue à Casablanca | Prise de RDV</title>
     <meta name="description" content="Dr. Amine Khadiri, cardiologue à Casablanca. Diagnostic précis : Écho-Doppler cardiaque, Holter de 24h, épreuve d'effort. Suivi humain et personnalisé. Prenez rendez-vous en ligne pour votre bilan cardiaque.">
-    <meta name="keywords" content="Cardiologue Casablanca, Dr. Amine Khadiri, Meilleur cardiologue Casablanca, Rendez-vous cardiologue, Cabinet cardiologie, Hypertension, Épreuve d'effort, Holter ECG, Bilan cardiologique, Cardiologue 2mars, Cardiologue quartier des hopitaux, Cardiologue Quartier des Hôpitaux, طبيب القلب الدار البيضاء, أحسن طبيب قلب في الدار البيضاء">
+    <meta name="keywords" content="Cardiologue Casablanca, Dr. Amine Khadiri, Meilleur cardiologue Casablanca, Rendez-vous cardiologue, Amine khadiri, Cabinet cardiologie, Hypertension, Épreuve d'effort, Infarctus de myocarde, Test d'effort, Electrocardiograme, Holter ECG, Bilan cardiologique, Cardiologue 2mars, Cardiologue quartier des hopitaux, Cardiologue Quartier des Hôpitaux, طبيب القلب الدار البيضاء, أحسن طبيب قلب في الدار البيضاء, الدكتور أمين خديري, عيادة أمراض القلب الدار البيضاء, ارتفاع ضغط الدم, تخطيط القلب, اختبار الجهد">
     <meta name="author" content="Dr. Amine Khadiri">
     <meta name="google-site-verification" content="IOwmUBniEGBHFAlT-9CRurghGEOLJ9kFTsRntY_GibE" />
     <link rel="icon" type="image/jpeg" href="logo.jpeg">
@@ -84,7 +84,7 @@
           "@type": "Physician",
           "name": "Dr. Amine Khadiri",
           "image": "https://www.moncardiologue-casablanca.ma/visite.jpeg",
-          "url": "https://moncardiologue-casablanca.ma",
+          "url": "https://www.moncardiologue-casablanca.ma",
           "telephone": "+212522863586",
           "address": {
             "@type": "PostalAddress",
@@ -98,7 +98,7 @@
         {
           "@type": "WebSite",
           "name": "Dr. Amine Khadiri",
-          "url": "https://moncardiologue-casablanca.ma/"
+          "url": "https://www.moncardiologue-casablanca.ma/"
         }
       ]
     }
@@ -302,36 +302,6 @@
                             <h3 class="text-2xl font-bold mt-6 text-gray-900"><span data-lang="fr">Suivi</span><span data-lang="ar" class="font-cairo">المتابعة</span></h3>
                             <p class="text-gray-600 mt-2"><span data-lang="fr">Mise en place d'un plan de traitement et d'un suivi personnalisé pour des résultats durables.</span><span data-lang="ar" class="font-cairo">وضع خطة علاجية ومتابعة شخصية لنتائج دائمة.</span></p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Assistant IA Section -->
-        <section id="assistant" class="py-20 md:py-32 reveal">
-             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900">
-                        <span data-lang="fr">Assistant d'Information Cardiologique</span>
-                        <span data-lang="ar" class="font-cairo">مساعد المعلومات لأمراض القلب</span>
-                    </h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">
-                        <span data-lang="fr">Posez une question d'ordre général et notre assistant IA vous fournira une réponse simple et brève.</span>
-                        <span data-lang="ar" class="font-cairo">اطرح سؤالاً عامًا وسيقدم لك مساعدنا الذكي إجابة بسيطة وموجزة.</span>
-                    </p>
-                </div>
-                <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
-                    <textarea id="gemini-prompt" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500" rows="3" placeholder="Ex: Qu'est-ce qu'une palpitation ?"></textarea>
-                    <div class="text-center mt-4">
-                        <button id="gemini-generate-btn" class="brand-red-bg text-white font-bold px-8 py-3 rounded-full hover:bg-red-800 transition shadow-lg">
-                            ✨ <span data-lang="fr">Obtenir une réponse</span><span data-lang="ar" class="font-cairo">الحصول على إجابة</span>
-                        </button>
-                    </div>
-                    <div id="gemini-loading" class="text-center mt-6 hidden">
-                        <i class="fas fa-spinner fa-spin text-3xl brand-red"></i>
-                    </div>
-                    <div id="gemini-result" class="mt-6 p-6 bg-red-50 rounded-lg" style="display: none;">
-                        <!-- Gemini result here -->
                     </div>
                 </div>
             </div>
@@ -734,7 +704,7 @@
                         let chatHistory = [];
                         chatHistory.push({ role: "user", parts: [{ text: fullPrompt }] });
                         const payload = { contents: chatHistory };
-                        const apiKey = ""; 
+                        const apiKey = ""; // IMPORTANT: Collez votre clé d'API Google ici
                         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
                         
                         const response = await fetch(apiUrl, {
@@ -772,3 +742,4 @@
     </script>
 </body>
 </html>
+
