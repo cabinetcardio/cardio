@@ -703,69 +703,71 @@
             const savedLang = localStorage.getItem('language');
             setLanguage(savedLang || 'fr');
 
-            // --- SCRIPT GEMINI ---
-            const generateBtn = document.getElementById('gemini-generate-btn');
-            const promptInput = document.getElementById('gemini-prompt');
-            const loadingEl = document.getElementById('gemini-loading');
-            const resultEl = document.getElementById('gemini-result');
+          // --- SCRIPT GEMINI ---
+const generateBtn = document.getElementById('gemini-generate-btn');
+const promptInput = document.getElementById('gemini-prompt');
+const loadingEl = document.getElementById('gemini-loading');
+const resultEl = document.getElementById('gemini-result');
 
-            generateBtn.addEventListener('click', async () => {
-                const userPrompt = promptInput.value.trim();
-                const currentLang = document.documentElement.lang || 'fr';
-                const alertMessages = {
-                    fr: "Veuillez poser une question.",
-                    ar: "الرجاء طرح سؤال."
-                };
+if(generateBtn){
+    generateBtn.addEventListener('click', async () => {
+        const userPrompt = promptInput.value.trim();
+        const currentLang = document.documentElement.lang || 'fr';
+        const alertMessages = {
+            fr: "Veuillez poser une question.",
+            ar: "الرجاء طرح سؤال."
+        };
 
-                if (!userPrompt) {
-                    alert(alertMessages[currentLang]);
-                    return;
-                }
+        if (!userPrompt) {
+            alert(alertMessages[currentLang]);
+            return;
+        }
 
-                loadingEl.style.display = 'block';
-                resultEl.style.display = 'none';
-                resultEl.innerHTML = '';
+        loadingEl.style.display = 'block';
+        resultEl.style.display = 'none';
+        resultEl.innerHTML = '';
 
-                const fullPrompt = `En tant qu'assistant médical dans un cabinet de cardiologie, répondez à la question générale suivante de manière TRÈS BRÈVE et SIMPLE (2-3 phrases maximum) : '${userPrompt}'. Ne donnez AUCUN conseil médical, diagnostic ou pronostic. Terminez IMPÉRATIVEMENT votre réponse par la phrase suivante, traduite dans la langue de la question (français ou arabe) : 'Pour un avis médical précis, il est essentiel de prendre rendez-vous pour une consultation.'`;
-                
-                try {
-                    let chatHistory = [];
-                    chatHistory.push({ role: "user", parts: [{ text: fullPrompt }] });
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; 
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                    
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`Erreur API: ${response.statusText}`);
-                    }
-                    
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        
-                        let text = result.candidates[0].content.parts[0].text;
-                        resultEl.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
-                    } else {
-                       resultEl.innerHTML = '<p>Désolé, une erreur est survenue. Veuillez réessayer.</p>';
-                    }
-
-                } catch (error) {
-                    console.error('Erreur Gemini:', error);
-                    resultEl.innerHTML = '<p>Désolé, impossible de contacter l\'assistant pour le moment.</p>';
-                } finally {
-                    loadingEl.style.display = 'none';
-                    resultEl.style.display = 'block';
-                }
+        const fullPrompt = `En tant qu'assistant médical dans un cabinet de cardiologie, répondez à la question générale suivante de manière TRÈS BRÈVE et SIMPLE (2-3 phrases maximum) : '${userPrompt}'. Ne donnez AUCUN conseil médical, diagnostic ou pronostic. Terminez IMPÉRATIVEMENT votre réponse par la phrase suivante, traduite dans la langue de la question (français ou arabe) : 'Pour un avis médical précis, il est essentiel de prendre rendez-vous pour une consultation.'`;
+        
+        try {
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: fullPrompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+            
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
             });
-        });
+
+            if (!response.ok) {
+                throw new Error(`Erreur API: ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+
+            if (result.candidates && result.candidates.length > 0 &&
+                result.candidates[0].content && result.candidates[0].content.parts &&
+                result.candidates[0].content.parts.length > 0) {
+                
+                let text = result.candidates[0].content.parts[0].text;
+                resultEl.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+            } else {
+               resultEl.innerHTML = '<p>Désolé, une erreur est survenue. Veuillez réessayer.</p>';
+            }
+
+        } catch (error) {
+            console.error('Erreur Gemini:', error);
+            resultEl.innerHTML = '<p>Désolé, impossible de contacter l\'assistant pour le moment.</p>';
+        } finally {
+            loadingEl.style.display = 'none';
+            resultEl.style.display = 'block';
+        }
+    });
+}
+
     </script>
 </body>
 </html>
